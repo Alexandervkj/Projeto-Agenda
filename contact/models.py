@@ -9,3 +9,7 @@ class Contact(models.Model):
     email = models.EmailField(max_length=254, blank=True)
     created_date = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True)
+
+    # metodo para sobreescrever o contatto, ao inves de aparecer Contact(2) aparece seu nome e sobrenome.
+    def __str__(self) -> str:
+        return f'{self.first_name} {self.last_name}'
