@@ -6,7 +6,7 @@ from django.contrib.auth import password_validation
 from. import models
 
 class ContactForm(forms.ModelForm):
-    picture = forms.ImageField(
+    picture = forms.ImageField(required=False,
         widget=forms.FileInput(
             attrs={
                 'accept': 'image/*',
